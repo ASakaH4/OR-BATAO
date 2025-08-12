@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medical Learning Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Medical Learning Hub</h1>
+      <p class="subtitle">Quiz • Theory • PDFs • Social</p>
+    </div>
+    <nav class="tabs" role="navigation" aria-label="Main tabs">
+      <button class="tab-btn active" data-tab="quiz">🩺 Quiz</button>
+      <button class="tab-btn" data-tab="theory">📖 Theory</button>
+      <button class="tab-btn" data-tab="pdf">📂 PDFs</button>
+      <button class="tab-btn" data-tab="social">🌐 Social</button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Quiz -->
+    <section id="quiz" class="tab-panel active">
+      <div class="card">
+        <h2 id="q-number">Question</h2>
+        <div id="q-text" class="q-text"></div>
+
+        <div class="controls">
+          <button id="prevBtn" class="nav-btn">⬅ Previous</button>
+          <button id="showAnswerBtn" class="primary">Show Answer</button>
+          <button id="nextBtn" class="nav-btn">Next ➡</button>
+        </div>
+
+        <div id="answerBox" class="answer-box" aria-hidden="true"></div>
+
+        <div class="progress">
+          <span id="progressText"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theory -->
+    <section id="theory" class="tab-panel">
+      <div class="card scroll">
+        <h2>Theory</h2>
+        <div id="theoryText" class="theory-text"></div>
+      </div>
+    </section>
+
+    <!-- PDF -->
+    <section id="pdf" class="tab-panel">
+      <div class="card">
+        <h2>PDF Documents</h2>
+        <label for="pdfSelect">Choose a document</label>
+        <select id="pdfSelect">
+          <option value="">-- select a pdf --</option>
+        </select>
+        <div class="pdf-frame-wrap">
+          <iframe id="pdfViewer" title="PDF viewer"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social -->
+    <section id="social" class="tab-panel">
+      <div class="card">
+        <h2>Social</h2>
+        <label for="socialSelect">Choose a link</label>
+        <select id="socialSelect">
+          <option value="">-- select a social link --</option>
+        </select>
+        <div style="margin-top:12px">
+          <button id="openSocialBtn" class="primary">Open</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Made for study — replace data files to update content.</small>
+  </footer>
+
+  <!-- Data files -->
+  <script src="quiz-data.js"></script>
+  <script src="theory-data.js"></script>
+  <script src="pdf-data.js"></script>
+  <script src="social-data.js"></script>
+
+  <!-- App logic -->
+  <script src="script.js"></script>
+</body>
+</html>
